@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Provider } from "react-redux";
 import configureStore from "./configureStore";
 import Dummy from "./containers/Dummy";
-import linkDummy from "./util/linkDummy";
 import { database } from "firebase";
+import FirebaseProvider from "./firebase-redux-react/FirebaseProvider";
 
 const store = configureStore();
 
@@ -13,22 +13,21 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    padding: 16
   }
 };
 
 class App extends Component {
-  componentDidMount() {
-    linkDummy(database(), store);
-  }
-
   render() {
     return (
-      <Provider store={store}>
-        <div style={styles.container}>
-          <Dummy />
-        </div>
-      </Provider>
+      <FirebaseProvider database={database()}>
+        <Provider store={store}>
+          <div style={styles.container}>
+            <Dummy />
+          </div>
+        </Provider>
+      </FirebaseProvider>
     );
   }
 }

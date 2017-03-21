@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { setDummy } from "../reducers/dummy";
+import { getDummy } from "../reducers";
+import bind from "../firebase-redux-react/bind";
 
 const Dummy = ({ value, onChange }) => (
   <div style={{ textAlign: "center" }}>
@@ -20,4 +22,12 @@ const mapDispatchToProps = dispatch => ({
   onChange: value => dispatch(setDummy(value))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dummy);
+const DummyContainer = connect(mapStateToProps, mapDispatchToProps)(Dummy);
+
+const dummyPath = "/dummy";
+const dummyActionCreator = setDummy;
+const dummyAccessor = getDummy;
+
+export default bind(dummyPath, dummyActionCreator, dummyAccessor)(
+  DummyContainer
+);

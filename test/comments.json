@@ -1,0 +1,37 @@
+{
+  "a1": {
+    "text": "This is a comment",
+    "likes": 23,
+    "author": "Aakash N S"
+  },
+  "a2": {
+    "text": "This is another comment",
+    "likes": 7,
+    "author": "Aakash N S"
+  },
+  "a6": {
+    "text": "Sometimes solutions aren't simple",
+    "likes": 42,
+    "author": "Aakash N S"
+  },
+  "a3": {
+    "text": "There's a lady who knows",
+    "likes": 78,
+    "author": "Aakash N S"
+  },
+  "a5": {
+    "text": "Here we are now, entertain us!",
+    "likes": 5,
+    "author": "Aakash N S"
+  },
+  "a4": {
+    "text": "Somwhere only we know!",
+    "likes": 18,
+    "author": "Aakash N S"
+  },
+  "a7": {
+    "text": "Don't be a spoilsport",
+    "likes": 23,
+    "author": "Aakash N S"
+  }
+}

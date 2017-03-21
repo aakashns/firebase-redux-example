@@ -6,3 +6,5 @@ export default combineReducers({
   dummy,
   profile
 });
+
+export const getDummy = state => state.dummy;
