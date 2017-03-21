@@ -5,7 +5,7 @@ const attach = connection =>
     class FirebaseReduxWrapper extends Component {
       componentDidMount() {
         const { database, store } = this.context;
-        this.endConnection = connection(database, store);
+        this.endConnection = connection(this.props)(database, store);
       }
 
       componentWillUnmount() {

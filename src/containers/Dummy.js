@@ -8,8 +8,6 @@ const Dummy = ({ value, onChange }) => (
   <div style={{ textAlign: "center" }}>
     <div>The value of dummy is:</div>
     <div><b>{value}</b></div>
-    <br />
-    <div>You can edit it below</div>
     <input type="text" value={value} onChange={e => onChange(e.target.value)} />
   </div>
 );
@@ -24,4 +22,4 @@ const mapDispatchToProps = dispatch => ({
 
 const DummyContainer = connect(mapStateToProps, mapDispatchToProps)(Dummy);
 
-export default bind("/dummy", setDummy, getDummy)(DummyContainer);
+export default bind(() => "/dummy", setDummy, getDummy)(DummyContainer);
