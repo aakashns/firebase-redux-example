@@ -1,6 +1,7 @@
 /** Action Types */
 export const SET_COMMENT = "SET_COMMENT";
 export const CLEAR_COMMENT = "CLEAR_COMMENT";
+export const EDIT_COMMENT = "EDIT_COMMENT";
 
 /** Action Creators */
 export const setComment = comment => ({
@@ -15,6 +16,14 @@ export const clearComment = id => ({
   type: CLEAR_COMMENT,
   payload: {
     id
+  }
+});
+
+export const editComment = (id, edits) => ({
+  type: EDIT_COMMENT,
+  payload: {
+    id,
+    edits
   }
 });
 
@@ -46,6 +55,14 @@ const comments = (state = {}, { type, payload }) => {
       } = state;
       return newState;
     }
+    case EDIT_COMMENT:
+      return {
+        ...state,
+        [payload.id]: {
+          ...state[payload.id],
+          ...payload.edits
+        }
+      };
     default:
       return state;
   }

@@ -21,7 +21,7 @@ const bindChildren = (path, setActionCreator, removeActionCreator) =>
 
       const addedListener = commentsRef.on("child_added", handleResult);
 
-      const changedListener = commentsRef.on("child_changed", handleResult);
+      // const changedListener = commentsRef.on("child_changed", handleResult);
 
       const removedListener = commentsRef.on("child_removed", snap => {
         dispatch(removeActionCreator(snap.key));
@@ -29,7 +29,7 @@ const bindChildren = (path, setActionCreator, removeActionCreator) =>
 
       const unsubscribe = () => {
         commentsRef.off("child_added", addedListener);
-        commentsRef.off("child_changed", changedListener);
+        // commentsRef.off("child_changed", changedListener);
         commentsRef.off("child_removed", removedListener);
       };
       return unsubscribe;

@@ -6,7 +6,7 @@ import bindChildren from "../firebase-redux-react/bindChildren";
 import { setComment, clearComment } from "../reducers/comments";
 
 const Comments = ({ commentIds }) => (
-  <div>
+  <div style={{ width: "100%" }}>
     <h3>Comments</h3>
     {commentIds.map(id => <Comment id={id} key={id} />)}
     {commentIds.length === 0 && <div>There are no comments! :-(</div>}
