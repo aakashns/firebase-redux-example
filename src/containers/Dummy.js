@@ -24,10 +24,4 @@ const mapDispatchToProps = dispatch => ({
 
 const DummyContainer = connect(mapStateToProps, mapDispatchToProps)(Dummy);
 
-const dummyPath = "/dummy";
-const dummyActionCreator = setDummy;
-const dummyAccessor = getDummy;
-
-export default bind(dummyPath, dummyActionCreator, dummyAccessor)(
-  DummyContainer
-);
+export default bind("/dummy", setDummy, getDummy)(DummyContainer);
